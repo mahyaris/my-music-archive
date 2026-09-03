@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <title>My Music Archive</title>
+  <link rel="stylesheet" href="assets/styles.css?v=3.1" />
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+</head>
+<body>
+  <div id="unlock" class="unlock-shell">
+    <div class="unlock-card">
+      <div class="brand-mark">M</div>
+      <p class="eyebrow">PRIVATE LISTENING ARCHIVE</p>
+      <h1>My Music Archive</h1>
+      <p class="muted">Your listening data is encrypted. The password stays in this browser session and is never sent anywhere.</p>
+      <form id="unlock-form">
+        <label for="password">Archive password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required autofocus />
+        <button type="submit">Unlock archive</button>
+      </form>
+      <p id="unlock-error" class="error" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <a href="#overview" class="brand">My Music Archive</a>
+      <nav id="nav">
+        <a href="#overview" data-page="overview">Overview</a>
+        <a href="#years" data-page="years">Years</a>
+        <a href="#artists" data-page="artists">Artists</a>
+        <a href="#albums" data-page="albums">Albums</a>
+        <a href="#tracks" data-page="tracks">Tracks</a>
+        <a href="#explorer" data-page="explorer">Explorer</a>
+      </nav>
+      <div class="sidebar-footer">
+        <span id="updated-at">Encrypted archive</span>
+        <button id="lock-button" class="text-button">Lock</button>
+      </div>
+    </aside>
+
+    <header class="mobile-header">
+      <a href="#overview" class="brand">My Music Archive</a>
+      <button id="menu-button" class="icon-button" aria-label="Open menu">☰</button>
+    </header>
+
+    <main id="content"></main>
+  </div>
+
+  <template id="loading-template">
+    <section class="page"><div class="loading-card">Loading your archive…</div></section>
+  </template>
+  <script src="assets/app.js?v=3.1" type="module"></script>
+</body>
+</html>
