@@ -38,7 +38,7 @@ jobs:
           ARCHIVE_PASSWORD: ${{ secrets.ARCHIVE_PASSWORD }}
           LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
           LASTFM_USERNAME: ${{ secrets.LASTFM_USERNAME }}
-        run: python scripts/update_archive.py
+        run: python -u scripts/update_archive.py
 
       - name: Commit encrypted archive changes
         run: |
